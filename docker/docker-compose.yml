@@ -1,0 +1,16 @@
+
+services:
+  backend:
+    image: express-api-trash-aphine:latest
+    container_name: node-express-sqlite-docker-v1-trash
+    restart: unless-stopped
+    ports:
+      - "3006:3000"
+    env_file:
+      - ../.env
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    driver: bridge
